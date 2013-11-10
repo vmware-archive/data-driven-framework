@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+    <namespace>
+        <class-name>com.vmware.qe.framework.datadriven.DynamicUsage</class-name>
+        <data-combination>
+            <set>
+                <element>
+                    <capacity>20</capacity>
+                </element>
+                <element>
+                    <capacity>50</capacity>
+                </element>
+            </set>
+            <set>
+                <element>
+                    <items-to-add>100</items-to-add>
+                </element>
+                <element>
+                    <items-to-add>500</items-to-add>
+                </element>
+            </set>
+            <set>
+                <element>
+                    <items-to-remove>10</items-to-remove>
+                </element>
+                <element>
+                    <items-to-remove>50</items-to-remove>
+                </element>
+                <element>
+                    <items-to-remove>90</items-to-remove>
+                </element>
+            </set>
+        </data-combination>
+    </namespace>
+</test-data>

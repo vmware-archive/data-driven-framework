@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+    <namespace>
+        <class-name>com.vmware.qe.framework.datadriven.demo.app.TestLaunchBirds</class-name>
+        <!-- 001 & 002 Will run for all versions. -->
+        <data test-id="001">
+            <birds>RED,BLACK,YELLOW</birds>
+            <hit>true,true,true</hit>
+            <expectedHits>1,0,1</expectedHits>
+        </data>
+        <data test-id="002">
+            <birds>BLACK,YELLOW,RED</birds>
+            <hit>true,false,true</hit>
+            <expectedHits>2,2,0</expectedHits>
+        </data>
+        <!-- 003 & 004 Will run for version 2 and above. -->
+        <data test-id="003" above-version="2">
+            <birds>BLACK,RED,YELLOW,WHITE</birds>
+            <hit>true,false,false,true</hit>
+            <expectedHits>2,2,2,0</expectedHits>
+        </data>
+        <data test-id="004" above-version="2">
+            <birds>WHITE,BLACK,RED,YELLOW</birds>
+            <hit>true,true,true,false</hit>
+            <expectedHits>0,2,0,0</expectedHits>
+        </data>
+        <data test-id="005" above-version="3">
+            <birds>WHITE,BLACK,RED,YELLOW,WHITE,BLACK</birds>
+            <hit>true,true,true,false,true,true</hit>
+            <expectedHits>0,2,0,0,0,2</expectedHits>
+        </data>
+    </namespace>
+</test-data>

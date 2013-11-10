@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- Data Driven Framework Project Details -->
+	<groupId>com.vmware.qe.framework</groupId>
+	<artifactId>data-driven-framework</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	<name>Data Driven Framework</name>
+	<url>https://github.com/vmware/data-driven-framework</url>
+	<developers>
+		<developer>
+			<id>kirane</id>
+			<name>Kiran Eshwarappa</name>
+			<email>kirane@vmware.com</email>
+		</developer>
+		<developer>
+			<id>selangovan</id>
+			<name>Selventhiran Elangovan</name>
+			<email>selangovan@vmware.com</email>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/vmware/data-driven-framework.git</url>
+	</scm>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.version>1.7</compiler.version>
+		<compiler.source.version>1.7</compiler.source.version>
+		<compiler.target.version>1.7</compiler.target.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${compiler.source.version}</source>
+					<target>${compiler.target.version}</target>
+				</configuration>
+			</plugin>
+			<!-- Copies main/resources and test/resources to output resources directory. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<!-- Generate main and test jars. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>generate-jar</id>
+						<phase>install</phase>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<!-- Include data-driven xml's into the test jar. -->
+		<testResources>
+			<testResource>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.csv</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.supercsv</groupId>
+			<artifactId>super-csv</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+	</dependencies>
+	<organization>
+		<name>vmware</name>
+		<url>www.vmware.com</url>
+	</organization>
+</project>

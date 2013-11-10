@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DD-test-suite" verbose="2" preserve-order="true">
+    <test name="DD-Tests">
+        <classes>
+            <class name="com.vmware.qe.framework.datadriven.DynamicUsage" />
+            <!-- class name="com.vmware.qe.framework.datadriven.SampleTest" />
+            <class name="com.vmware.qe.framework.datadriven.demo.app.TestLaunchBirds" /-->
+        </classes>
+    </test>
+</suite>

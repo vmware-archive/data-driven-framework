@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dd-components>
+	<!-- Suppliers -->
+	<data-supplier default="true">
+		<name>XML</name>
+		<class>com.vmware.qe.framework.datadriven.impl.supplier.XMLDataSupplier
+		</class>
+	</data-supplier>
+	<data-supplier>
+		<name>CSV</name>
+		<class>com.vmware.qe.framework.datadriven.impl.supplier.CSVDataSupplier
+		</class>
+	</data-supplier>
+	<!-- Generators -->
+	<data-generator default="true">
+		<name>AllComb</name>
+		<class>com.vmware.qe.framework.datadriven.impl.generator.ExhaustiveGenerator
+		</class>
+	</data-generator>
+	<data-generator>
+		<name>Pairwise</name>
+		<class>com.vmware.qe.framework.datadriven.impl.generator.PairwiseDataGenerator
+		</class>
+	</data-generator>
+	<!-- Filters: All filters will be applied -->
+	<data-filter>
+		<name>TestIdFilter</name>
+		<class>com.vmware.qe.framework.datadriven.impl.filter.DataFilterBasedOnTestId
+		</class>
+	</data-filter>
+	<data-filter>
+		<name>propertyFilter</name>
+		<class>com.vmware.qe.framework.datadriven.impl.filter.DataFilterBasedOnProperty
+		</class>
+	</data-filter>
+	<!-- Instance Creator -->
+	<instance-creator default="true">
+		<name>DefaultCreator</name>
+		<class>com.vmware.qe.framework.datadriven.impl.creator.SimpleTestInstanceCreator
+		</class>
+	</instance-creator>
+	<!-- Data Injector -->
+	<data-injector default="true">
+		<name>dataPropertyInjector</name>
+		<class>com.vmware.qe.framework.datadriven.impl.injector.DataInjectorUsingReflection
+		</class>
+	</data-injector>
+	<data-injector>
+		<name>dataAnnotationInjector</name>
+		<class>com.vmware.qe.framework.datadriven.impl.injector.DataInjectorUsingAnnotations
+		</class>
+	</data-injector>
+</dd-components>

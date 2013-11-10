@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+	<namespace>
+		<class-name>com.vmware.qe.framework.datadriven.SampleTest</class-name>
+		<data-combination>
+			<set>
+				<element>
+					<service>ssh</service>
+				</element>
+				<element>
+					<service>ftp</service>
+				</element>
+			</set>
+			<set>
+				<element>
+					<user>adminuser</user>
+					<pass>admin@pass1</pass>
+				</element>
+				<element>
+					<user>testuser</user>
+					<pass>pass123</pass>
+				</element>
+			</set>
+			<set>
+				<element>
+					<operation>start</operation>
+				</element>
+				<element>
+					<operation>stop</operation>
+				</element>
+			</set>
+		</data-combination>
+		<data auto-gen="true" test-id="001">
+			<service>ssh</service>
+			<user>adminuser</user>
+			<pass>admin@pass1</pass>
+			<operation>start</operation>
+		</data>
+		<data test-id="020">
+			<service>ssh</service>
+			<user>adminuser</user>
+			<pass>admin@pass1</pass>
+			<operation>start</operation>
+		</data>
+		<data auto-gen="true" test-id="002">
+			<service>ssh</service>
+			<user>adminuser</user>
+			<pass>admin@pass1</pass>
+			<operation>stop</operation>
+		</data>
+		<data auto-gen="true" test-id="003">
+			<service>ssh</service>
+			<user>testuser</user>
+			<pass>pass123</pass>
+			<operation>start</operation>
+		</data>
+		<data auto-gen="true" test-id="004">
+			<service>ssh</service>
+			<user>testuser</user>
+			<pass>pass123</pass>
+			<operation>stop</operation>
+		</data>
+		<data auto-gen="true" test-id="005">
+			<service>ftp</service>
+			<user>adminuser</user>
+			<pass>admin@pass1</pass>
+			<operation>start</operation>
+		</data>
+	</namespace>
+</test-data>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+    <xs:element name="test-data" type="TestDataRoot" />
+    <xs:complexType name="TestDataRoot">
+        <xs:sequence>
+            <xs:element name="namespace" type="TestNamespace" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TestNamespace">
+        <xs:sequence>
+            <xs:element name="class-name" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="common-data" type="TestCommonData" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="data-combination" type="TestDataCombination" minOccurs="0"
+                maxOccurs="unbounded" />
+            <xs:element name="data" type="TestData" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TestCommonData">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="file" type="xs:string" />
+        <xs:attribute name="target" type="xs:string" />
+        <xs:attribute name="above-version" type="xs:string" />
+        <xs:attribute name="below-version" type="xs:string" />
+        <xs:attribute name="include-versions" type="xs:string" />
+        <xs:attribute name="exclude-versions" type="xs:string" />
+        <xs:attribute name="version-range" type="xs:string" />
+    </xs:complexType>
+    <xs:complexType name="TestData">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="file" type="xs:string" />
+        <xs:attribute name="target" type="xs:string" />
+        <xs:attribute name="above-version" type="xs:string" />
+        <xs:attribute name="below-version" type="xs:string" />
+        <xs:attribute name="include-versions" type="xs:string" />
+        <xs:attribute name="exclude-versions" type="xs:string" />
+        <xs:attribute name="version-range" type="xs:string" />
+        <xs:attribute name="auto-gen" type="xs:string" />
+        <xs:attribute name="tags" type="xs:string" />
+        <!-- TODO make the test-id and test-description attribute required by adding use="required" -->
+        <xs:attribute name="test-id" type="xs:string" />
+        <xs:attribute name="test-description" type="xs:string" />
+        <xs:attribute name="ostype" type="xs:string" />
+    </xs:complexType>
+    <xs:complexType name="TestDataCombination">
+        <xs:sequence>
+            <xs:element name="set" type="DataSet" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DataSet">
+        <xs:sequence>
+            <xs:element name="element" type="DataElement" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DataElement">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="target" type="xs:string" />
+        <xs:attribute name="above-version" type="xs:string" />
+        <xs:attribute name="below-version" type="xs:string" />
+        <xs:attribute name="include-versions" type="xs:string" />
+        <xs:attribute name="exclude-versions" type="xs:string" />
+        <xs:attribute name="version-range" type="xs:string" />
+    </xs:complexType>
+</xs:schema>
